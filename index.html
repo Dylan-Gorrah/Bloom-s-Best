@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOFF — Best Kota in Bloemfontein | Premium Kotas, Grills & Wings 24/7</title>
+<meta name="description" content="Best kota in Bloemfontein. Student-priced premium kotas, grills & wings at 29 King Edward Ave. Open 24/7. Try our legendary Beef & Chips. Order now!">
+<meta name="keywords" content="best kota in bloem, bloemfontein restaurant, student food, kota near me, wings bloem, cheap food bloem, 24 hour food bloemfontein, moff, masters of fast food">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        d1:'#181818', d2:'#1f1f1f', d3:'#272727', d4:'#313131',
+        c1:'#f5f2ee', c2:'#e8e4de',
+        g1:'#9a9590', g2:'#6b6760', g3:'#3d3b38',
+        wood:'#c8a97e', woodl:'#d9be9a', woodd:'#a8865a',
+        acc:'#e8c98a',
+      },
+      fontFamily: {
+        display:['"Cormorant Garamond"','serif'],
+        body:['Barlow','sans-serif'],
+        cond:['"Barlow Condensed"','sans-serif'],
+        logo:['Roboto','sans-serif'],
+      },
+    }
+  }
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "MOFF - Masters of Fast Food",
+  "image": "images/MOFFlogo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "29 King Edward Ave",
+    "addressLocality": "Bloemfontein",
+    "addressRegion": "Free State",
+    "postalCode": "9301",
+    "addressCountry": "ZA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -29.1125,
+    "longitude": 26.2141
+  },
+  "url": "https://moff.co.za",
+  "telephone": "+27715246973",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "servesCuisine": ["Kota", "Fast Food", "Grills", "Wings", "Student Food"],
+  "priceRange": "R28 - R150",
+  "description": "Best kota in Bloemfontein. Student-priced premium kotas, grills and wings. Open 24/7 at 29 King Edward Ave."
+}
+</script>
+
+<style>
+:root{
+  --wood:#c8a97e; --woodl:#d9be9a; --woodd:#a8865a;
+  --acc:#e8c98a;
+  --d1:#181818; --d2:#1f1f1f; --d3:#272727;
+  --c1:#f5f2ee; --c2:#e8e4de;
+  --g1:#9a9590; --g2:#6b6760; --g3:#3d3b38;
+  --line:rgba(200,169,126,.18); --lines:rgba(245,242,238,.07);
+  --woodglow:rgba(200,169,126,.1);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--d1);
+  color:var(--c1);
+  font-family:'Barlow',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+}
+
+/* Grain overlay */
+body::after {
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.025;pointer-events:none;z-index:9999;
+}
+
+img { display:block; max-width:100%; }
+a { text-decoration:none; color:inherit; }
+button { border:none; background:none; cursor:pointer; font-family:inherit; }
+
+/* ── TYPOGRAPHY UTILS ── */
+.t-label {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:500;
+  letter-spacing:.4em; text-transform:uppercase;
+  color:var(--wood);
+  display:flex; align-items:center; gap:14px;
+}
+.t-label::before { content:''; display:block; width:28px; height:1px; background:var(--wood); }
+.t-h2 {
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300; font-size:clamp(2.2rem,4vw,3.2rem);
+  line-height:1.08; letter-spacing:-.02em; color:var(--c1);
+}
+.t-h2 em { font-style:italic; color:var(--woodl); }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:600;
+  letter-spacing:.25em; text-transform:uppercase;
+  color:var(--d1); background:var(--wood);
+  padding:14px 36px; display:inline-block;
+  transition:background .25s, transform .2s;
+}
+.btn-primary:hover { background:var(--woodl); transform:translateY(-2px); }
+
+.btn-ghost {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:500;
+  letter-spacing:.25em; text-transform:uppercase;
+  color:var(--g1); border-bottom:1px solid var(--g3);
+  padding-bottom:2px;
+  transition:color .25s, border-color .25s;
+}
+.btn-ghost:hover { color:var(--c1); border-color:var(--c1); }
+
+.btn-dl {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--wood); border:1px solid var(--line);
+  padding:9px 20px; display:inline-flex; align-items:center; gap:8px;
+  transition:background .25s, color .25s, border-color .25s;
+  white-space:nowrap;
+}
+.btn-dl:hover { background:var(--woodglow); border-color:var(--wood); color:var(--woodl); }
+.btn-dl svg { width:13px; height:13px; flex-shrink:0; }
+
+/* ── NAV ── */
+.nav {
+  position:fixed; top:0; left:0; right:0; height:68px;
+  background:rgba(24,24,24,.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+  display:flex; align-items:center;
+  justify-content:space-between;
+  padding:0 clamp(20px,4vw,52px);
+  z-index:1000;
+}
+.nav-logo {
+  display:flex; align-items:center;
+}
+.nav-wordmark {
+  font-family:'Roboto',sans-serif;
+  font-weight:100;
+  letter-spacing:.5em;
+  font-size:1.15rem;
+  color:var(--c1);
+  line-height:1;
+}
+.nav-right { display:flex; align-items:center; gap:20px; }
+.nav-links {
+  display:flex; align-items:center; gap:32px; list-style:none;
+}
+.nav-links a {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:500;
+  letter-spacing:.22em; text-transform:uppercase;
+  color:var(--g1); transition:color .25s;
+}
+.nav-links a:hover { color:var(--c1); }
+.nav-cta {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:600;
+  letter-spacing:.25em; text-transform:uppercase;
+  color:var(--d1); background:var(--wood);
+  padding:9px 22px;
+  transition:background .25s, transform .2s;
+}
+.nav-cta:hover { background:var(--woodl); transform:translateY(-1px); }
+.nav-burger {
+  display:none; flex-direction:column;
+  justify-content:center; gap:5px;
+  padding:8px; cursor:pointer;
+  z-index:1100;
+}
+.nav-burger span {
+  display:block; width:22px; height:1px;
+  background:var(--g1);
+  transition:transform .3s, opacity .3s, background .25s;
+  transform-origin:center;
+}
+.nav-burger.open span:nth-child(1) { transform:translateY(6px) rotate(45deg); background:var(--wood); }
+.nav-burger.open span:nth-child(2) { opacity:0; }
+.nav-burger.open span:nth-child(3) { transform:translateY(-6px) rotate(-45deg); background:var(--wood); }
+
+/* ── MOBILE DRAWER ── */
+.mobile-drawer {
+  position:fixed; top:0; right:0; bottom:0; width:min(320px, 100vw);
+  background:var(--d2); border-left:1px solid var(--line);
+  z-index:1050; padding:80px 40px 48px;
+  display:flex; flex-direction:column; gap:40px;
+  transform:translateX(100%);
+  transition:transform .4s cubic-bezier(.22,.61,.36,1);
+}
+.mobile-drawer.open { transform:translateX(0); }
+.drawer-links { list-style:none; display:flex; flex-direction:column; gap:0; }
+.drawer-links li { border-bottom:1px solid var(--lines); }
+.drawer-links a {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem; font-weight:300;
+  letter-spacing:-.01em; color:var(--g1);
+  padding:16px 0; display:block;
+  transition:color .25s;
+}
+.drawer-links a:hover { color:var(--c1); }
+.drawer-overlay {
+  position:fixed; inset:0; background:rgba(0,0,0,.6);
+  z-index:1040; opacity:0; pointer-events:none;
+  transition:opacity .35s;
+}
+.drawer-overlay.open { opacity:1; pointer-events:auto; }
+
+/* ── HERO ── */
+.hero {
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero-black { background:#000; }
+.hero-tag {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px; font-weight:500;
+  letter-spacing:.4em; text-transform:uppercase;
+  color:var(--wood); margin-bottom:24px;
+  display:flex; align-items:center; gap:14px;
+}
+.hero-tag::before { content:''; display:block; width:32px; height:1px; background:var(--wood); }
+.hero-h1 {
+  font-family:'Cormorant Garamond',serif; font-weight:300;
+  font-size:clamp(3rem,5.5vw,5.2rem);
+  line-height:1.02; letter-spacing:-.025em; color:var(--c1); margin-bottom:28px;
+}
+.hero-h1 em { font-style:italic; color:var(--woodl); }
+.hero-desc { font-size:clamp(14px,1.4vw,16px); color:var(--g1); line-height:1.9; max-width:400px; margin-bottom:44px; }
+
+.hero-featcard { transform-origin: bottom right; }
+@media (max-width: 639px) {
+  .hero-featcard { transform: scale(0.7); }
+}
+
+@media (max-width: 767px) {
+  .hero { padding-top: 80px; }
+  .hero-copy { padding: 0 16px; text-align: center; }
+  .hero-desc { max-width: 100%; font-size: 15px; margin-bottom: 28px; }
+  .hero-ctas { justify-content: center; }
+  .hero-h1 { font-size: clamp(2.4rem, 8vw, 3.2rem); }
+}
+
+.hero-stats {
+  position:absolute; bottom:0; left:0; right:0;
+  border-top:1px solid rgba(200,169,126,.22);
+  display:grid; grid-template-columns:repeat(3,1fr);
+  background:rgba(24,24,24,.85); backdrop-filter:blur(8px); z-index:30;
+}
+.stat { padding:20px 0; text-align:center; border-right:1px solid var(--lines); }
+.stat:last-child { border-right:none; }
+.stat-n {
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.8rem; font-weight:300; color:var(--woodl); letter-spacing:-.02em;
+}
+.stat-l {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--g2); margin-top:4px;
+}
+
+/* ── MARQUEE PROMO ── */
+.promo-wrap {
+  background:var(--woodd); overflow:hidden;
+  border-bottom:1px solid rgba(0,0,0,.2);
+  padding:12px 0;
+}
+.promo-track {
+  display:flex; gap:0; width:max-content;
+  animation:marquee 28s linear infinite;
+}
+.promo-track:hover { animation-play-state:paused; }
+.promo-set {
+  display:flex; align-items:center;
+  gap:0; flex-shrink:0;
+}
+.promo-i {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px; font-weight:500;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--d1); white-space:nowrap;
+  display:flex; align-items:center; gap:10px;
+  padding:0 32px;
+}
+.promo-i svg { width:11px; height:11px; flex-shrink:0; }
+.promo-dot {
+  width:4px; height:4px; border-radius:50%;
+  background:rgba(24,24,24,.3); flex-shrink:0;
+}
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── SPOTLIGHT ── */
+.spotlight { background:var(--d2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.spot-inner {
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr; min-height:480px;
+}
+.spot-vis {
+  display:flex; align-items:center; justify-content:center;
+  border-right:1px solid var(--line); position:relative; overflow:hidden;
+}
+.spot-bg-img {
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  filter:brightness(.6) saturate(.85);
+  transition:transform 6s ease;
+}
+.spot-vis:hover .spot-bg-img { transform:scale(1.04); }
+.spot-bg-grad {
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at center,rgba(200,169,126,.08) 0%,transparent 65%),
+              linear-gradient(180deg,transparent 40%,rgba(24,24,24,.5) 100%);
+}
+.new-badge {
+  position:absolute; top:24px; left:24px;
+  font-family:'Barlow Condensed',sans-serif; font-size:10px;
+  font-weight:700; letter-spacing:.3em; text-transform:uppercase;
+  background:var(--acc); color:var(--d1); padding:6px 14px; z-index:3;
+}
+.spot-content {
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(36px,5vw,64px);
+}
+
+@media (max-width: 767px) {
+  .spot-inner { grid-template-columns:1fr; min-height:320px; }
+  .spot-vis { border-right:none; border-bottom:1px solid var(--line); min-height:180px; }
+  .spot-content { padding:clamp(24px,4vw,40px); }
+  .spot-name { font-size:clamp(1.8rem,5vw,2.4rem); }
+  .spot-price { font-size:clamp(2rem,5vw,2.4rem); }
+}
+.spot-name {
+  font-family:'Cormorant Garamond',serif; font-weight:400;
+  font-size:clamp(2.2rem,4vw,3rem);
+  line-height:1.05; letter-spacing:-.02em;
+  color:var(--c1); margin-bottom:20px; margin-top:16px;
+}
+.spot-name em { font-style:italic; color:var(--woodl); }
+.spot-desc { font-size:16px; color:var(--g1); line-height:1.85; margin-bottom:36px; max-width:380px; }
+.spot-bot { display:flex; align-items:center; gap:32px; flex-wrap:wrap; }
+.spot-price {
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.6rem; font-weight:300; color:var(--woodl); letter-spacing:-.02em;
+}
+.spot-price sup { font-size:1.1rem; vertical-align:super; color:var(--wood); }
+
+/* ── SECTION COMMON ── */
+.sec { padding:clamp(64px,8vw,100px) clamp(20px,6vw,80px); }
+.sec-hdr { margin-bottom:56px; }
+
+/* ── MENU ── */
+.menu-wrap { max-width:1200px; margin:0 auto; }
+.menu-top { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-bottom:48px; }
+.menu-tabs {
+  display:flex; border-bottom:1px solid var(--line);
+  overflow-x:auto; scrollbar-width:none;
+  margin-bottom:48px;
+}
+.menu-tabs::-webkit-scrollbar { display:none; }
+.mtab {
+  font-family:'Barlow Condensed',sans-serif; font-size:12px;
+  font-weight:500; letter-spacing:.28em; text-transform:uppercase;
+  color:var(--g2); padding:15px 26px;
+  border-bottom:2px solid transparent; margin-bottom:-1px;
+  white-space:nowrap; cursor:pointer;
+  transition:color .25s, border-color .25s;
+}
+.mtab:hover { color:var(--g1); }
+.mtab.active { color:var(--woodl); border-bottom-color:var(--wood); }
+
+.menu-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1px; background:var(--lines); border:1px solid var(--lines);
+}
+.mpanel { display:none; }
+.mpanel.active { display:block; }
+
+.msec-hdr {
+  grid-column:1/-1; background:var(--d2);
+  padding:20px 28px 14px; border-bottom:1px solid var(--line);
+}
+.msec-hdr-label {
+  font-family:'Barlow Condensed',sans-serif; font-size:10px;
+  font-weight:600; letter-spacing:.4em; text-transform:uppercase;
+  color:var(--wood); display:flex; align-items:center; gap:12px;
+}
+.msec-hdr-label::before { content:''; display:block; width:20px; height:1px; background:var(--wood); }
+.msec-hdr-title {
+  font-family:'Cormorant Garamond',serif; font-size:1.3rem;
+  font-weight:400; color:var(--c2); margin-top:4px;
+}
+.msec-note { font-size:12px; color:var(--g2); margin-top:6px; line-height:1.5; font-style:italic; }
+
+.mitem {
+  background:var(--d1); padding:28px;
+  display:flex; flex-direction:column; gap:10px;
+  transition:background .3s; cursor:pointer; position:relative; overflow:hidden;
+}
+.mitem::before {
+  content:''; position:absolute; inset:0;
+  background:var(--woodglow); opacity:0; transition:opacity .3s;
+}
+.mitem:hover::before { opacity:1; }
+.mitem:hover .iname { color:var(--woodl); }
+
+.iicon { width:32px; height:32px; margin-bottom:6px; display:flex; align-items:center; justify-content:center; }
+.iicon svg { width:28px; height:28px; color:var(--wood); }
+.mitem-photo {
+  width:calc(100% + 56px); margin:-28px -28px 16px;
+  height:190px; object-fit:cover; object-position:center;
+  filter:brightness(.8) saturate(.9); display:block;
+}
+.itop { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+.iname {
+  font-family:'Cormorant Garamond',serif; font-size:1.35rem;
+  font-weight:400; color:var(--c1); line-height:1.2; transition:color .25s;
+}
+.iprice {
+  font-family:'Barlow Condensed',sans-serif; font-size:1.1rem;
+  font-weight:500; color:var(--wood); white-space:nowrap; letter-spacing:.03em;
+}
+.idesc { font-size:13px; color:var(--g2); line-height:1.7; }
+.itags { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.itag {
+  font-family:'Barlow Condensed',sans-serif; font-size:10px;
+  letter-spacing:.18em; text-transform:uppercase;
+  color:var(--g3); border:1px solid var(--g3);
+  padding:3px 9px; display:flex; align-items:center; gap:5px;
+}
+.itag svg { width:9px; height:9px; }
+.itag.pop { color:var(--woodd); border-color:var(--woodd); }
+.itag.neu { color:var(--acc); border-color:rgba(232,201,138,.4); }
+.itag.grn { color:#5dbe8a; border-color:rgba(93,190,138,.35); }
+
+/* ── LOCATION ── */
+.loc-sec { background:var(--d2); border-top:1px solid var(--line); }
+.loc-inner {
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1.6fr; min-height:520px;
+}
+.loc-info {
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(40px,6vw,80px); border-right:1px solid var(--line);
+}
+.addr-block { margin:32px 0; }
+.addr-line { font-size:16px; color:var(--c2); line-height:2; font-weight:300; }
+.addr-line strong { color:var(--c1); font-weight:400; }
+.hours-block { margin-top:32px; padding-top:32px; border-top:1px solid var(--lines); }
+.hours-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px;
+  font-weight:500; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--wood); margin-bottom:18px;
+}
+.hrow {
+  display:flex; justify-content:space-between;
+  padding:10px 0; border-bottom:1px solid var(--lines); font-size:15px;
+}
+.hday { color:var(--g1); }
+.htime { color:var(--c2); font-weight:400; }
+.status-pill {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'Barlow Condensed',sans-serif; font-size:11px;
+  font-weight:600; letter-spacing:.25em; text-transform:uppercase; margin-top:20px;
+}
+.sdot {
+  width:7px; height:7px; border-radius:50%;
+  background:#5dbe8a; box-shadow:0 0 0 3px rgba(93,190,138,.2);
+  animation:pulse 2s ease infinite;
+}
+.stext { color:#5dbe8a; }
+.map-wrap { position:relative; overflow:hidden; }
+.map-wrap iframe {
+  width:100%; height:100%; min-height:520px; border:none; display:block;
+  filter:saturate(0) brightness(.4) sepia(.3); transition:filter .4s;
+}
+.map-wrap:hover iframe { filter:saturate(.2) brightness(.5) sepia(.2); }
+.map-card {
+  position:absolute; top:24px; right:24px;
+  background:rgba(24,24,24,.92); border:1px solid var(--line);
+  padding:14px 20px; backdrop-filter:blur(8px);
+}
+.map-card-label {
+  font-family:'Barlow Condensed',sans-serif; font-size:10px;
+  letter-spacing:.3em; text-transform:uppercase; color:var(--wood); margin-bottom:4px;
+}
+.map-card-addr { font-size:13px; color:var(--c2); font-weight:300; }
+
+@media (max-width: 767px) {
+  .loc-inner { grid-template-columns:1fr; min-height:auto; }
+  .loc-info { border-right:none; border-bottom:1px solid var(--line); }
+  .map-wrap iframe { min-height:360px; height:360px; }
+  .map-card { top:16px; right:16px; }
+}
+
+/* ── FOOTER ── */
+.footer { padding:clamp(48px,6vw,64px) clamp(20px,6vw,80px) 40px; border-top:1px solid var(--line); }
+.foot-top {
+  display:grid; grid-template-columns:1.5fr 1fr 1fr;
+  gap:clamp(32px,5vw,64px); padding-bottom:48px;
+  border-bottom:1px solid var(--lines); margin-bottom:40px;
+}
+.foot-brand {
+  font-family:'Roboto',sans-serif; font-weight:100;
+  font-size:2rem; letter-spacing:.5em; color:var(--c1); margin-bottom:12px;
+}
+.foot-tag { font-size:14px; color:var(--g2); line-height:1.7; max-width:280px; }
+.foot-col-title {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px;
+  font-weight:600; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--wood); margin-bottom:22px;
+}
+.foot-links { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.foot-links a { font-size:14px; color:var(--g2); transition:color .2s; }
+.foot-links a:hover { color:var(--g1); }
+.foot-bot { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.foot-copy { font-size:12px; color:var(--g3); letter-spacing:.04em; }
+.foot-social { display:flex; gap:20px; }
+.soc {
+  font-family:'Barlow Condensed',sans-serif; font-size:11px;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--g3); transition:color .2s;
+}
+.soc:hover { color:var(--wood); }
+
+/* ── PDF LOADING OVERLAY ── */
+.pdf-overlay {
+  position:fixed; inset:0; background:rgba(24,24,24,.9);
+  backdrop-filter:blur(12px); z-index:9998;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px;
+  opacity:0; pointer-events:none; transition:opacity .3s;
+}
+.pdf-overlay.active { opacity:1; pointer-events:auto; }
+.pdf-spinner {
+  width:40px; height:40px; border:2px solid var(--g3);
+  border-top-color:var(--wood); border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+.pdf-msg {
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px; letter-spacing:.3em; text-transform:uppercase; color:var(--g1);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 3px rgba(93,190,138,.2)} 50%{box-shadow:0 0 0 6px rgba(93,190,138,.1)} }
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* Slow spin for overlapping circle in hero */
+.animate-spin-slow {
+  animation: spin 12s linear infinite;
+}
+</style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ico-star" viewBox="0 0 20 20">
+    <path fill="currentColor" d="M10 1 12.39 7.26 19 8.27l-5 4.87 1.26 6.82L10 16.77l-6.26 3.19L5 12.14 0 8.27l6.61-1.01Z"/>
+  </symbol>
+  <symbol id="ico-flame" viewBox="0 0 20 20">
+    <path fill="currentColor" d="M10 19a6 6 0 0 1-4.24-10.24A9.06 9.06 0 0 0 8 2.5a.44.44 0 0 1 .67-.38C12.44 4.44 14 7.38 14 10a5.13 5.13 0 0 1-.76 2.71A2.62 2.62 0 0 0 10 19Z"/>
+  </symbol>
+  <symbol id="ico-crown" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 16h16M4 16 3 8l4 4 3-7 3 7 4-4-1 8z"/>
+  </symbol>
+  <symbol id="ico-leaf" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 17C5.5 17 2 13.5 2 9c0 0 3.5-6 8-6s8 6 8 6c0 4.5-3.5 8-8 8Z"/>
+    <path d="M5 17c1-2 3-4 5-5"/>
+  </symbol>
+  <symbol id="ico-meat" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="10" cy="10" rx="7" ry="4.5" transform="rotate(-15 10 10)"/>
+    <circle cx="6.5" cy="8" r="1.2" fill="currentColor" stroke="none"/>
+    <line x1="10" y1="7" x2="11.5" y2="11.5"/>
+    <line x1="13" y1="6.5" x2="14.5" y2="11"/>
+  </symbol>
+  <symbol id="ico-fish" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 10s4-5.5 8-5.5S18 10 18 10s-4 5.5-8 5.5S2 10 2 10Z"/>
+    <circle cx="13.5" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+    <path d="M2 10 C0 7.5 0 5.5 2 4c-.5 2.5-.5 5.5 0 6C0 14 0 16 2 14.5"/>
+  </symbol>
+  <symbol id="ico-sausage" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14.5 7a3.5 3.5 0 0 1 0 6"/>
+    <path d="M5.5 7a3.5 3.5 0 0 0 0 6"/>
+    <line x1="5.5" y1="7" x2="14.5" y2="7"/>
+    <line x1="5.5" y1="13" x2="14.5" y2="13"/>
+  </symbol>
+  <symbol id="ico-wing" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 15c0 0 .5-6 4-8.5 2-1.5 5.5-2 8-4 1 2.5 0 6-3 8C9 12.5 6 13.5 3 15Z"/>
+    <path d="M3 15c1.5-2.5 4-4.5 7-5.5"/>
+    <circle cx="14.5" cy="5" r="1.5" fill="currentColor" stroke="none" opacity=".5"/>
+  </symbol>
+  <symbol id="ico-diamond" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M10 2 18 10 10 18 2 10Z"/>
+    <path stroke-linecap="round" d="m5 10 3-3 4 4 3-3"/>
+  </symbol>
+  <symbol id="ico-download" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 3v10M6 9l4 4 4-4M3 17h14"/>
+  </symbol>
+  <symbol id="ico-kota" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 12V9a7 7 0 0 1 14 0v3H3Z"/>
+    <rect x="2" y="12" width="16" height="4" rx="1"/>
+    <line x1="7" y1="9" x2="7" y2="12"/>
+    <line x1="10" y1="8" x2="10" y2="12"/>
+    <line x1="13" y1="9" x2="13" y2="12"/>
+  </symbol>
+</svg>
+
+<div class="pdf-overlay" id="pdfOverlay">
+  <div class="pdf-spinner"></div>
+  <div class="pdf-msg">Preparing your menu PDF…</div>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <ul class="drawer-links">
+    <li><a href="#menu" onclick="closeDrawer()">Menu</a></li>
+    <li><a href="#location" onclick="closeDrawer()">Location</a></li>
+    <li><a href="#location" onclick="closeDrawer()">Hours</a></li>
+    <li><a href="#spotlight" onclick="closeDrawer()">Featured</a></li>
+  </ul>
+  <button class="btn-dl" onclick="downloadMenuPDF(); closeDrawer();" style="align-self:flex-start;">
+    <svg viewBox="0 0 20 20"><use href="#ico-download"/></svg> Download Menu
+  </button>
+  <a href="#menu" class="btn-primary" onclick="closeDrawer()" style="align-self:flex-start;">View Menu</a>
+</div>
+
+<nav class="nav">
+  <button class="nav-burger flex lg:hidden" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <a href="#" class="nav-logo">
+    <span class="nav-wordmark">MOFF</span>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links hidden lg:flex">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#location">Hours</a></li>
+      <li><a href="#spotlight">Featured</a></li>
+    </ul>
+    
+    <div class="hidden sm:flex items-center gap-4">
+      <button class="btn-dl" onclick="window.open('Menu/MOFF-menu.pdf','_blank')">
+        <svg viewBox="0 0 20 20"><use href="#ico-download"/></svg> Menu PDF
+      </button>
+      <a href="#menu" class="nav-cta">Order Now</a>
+    </div>
+
+    <a href="#menu" class="btn-primary lg:hidden" onclick="scrollToMenuAndDownload(event)" style="font-size:0.9em; padding:12px 32px;">Menu</a>
+  </div>
+</nav>
+
+<section class="hero hero-black relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  <div class="absolute inset-0 flex items-center justify-center opacity-5 select-none z-0">
+    <h1 class="font-display text-[25vw] font-bold text-c1 leading-none tracking-tighter">MOFF</h1>
+  </div>
+
+  <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+    <div class="lg:col-span-7 relative flex justify-center items-center hero-visual">
+      <div class="relative w-full max-w-lg">
+        <div class="absolute -inset-10 border border-line rounded-full animate-spin-slow opacity-25 z-0"></div>
+
+        <img src="images/wings-tray.png" class="relative z-20 transform hover:scale-105 transition-transform duration-500 drop-shadow-2xl hero-wings" alt="Best wings and kota in Bloemfontein - MOFF premium street food">
+        
+        <img src="images/MOFFlogo.png" class="absolute -top-12 -left-12 w-44 h-44 object-contain z-30 drop-shadow-xl hero-logo" alt="MOFF - Best Kota Restaurant in Bloemfontein Logo">
+
+        <div class="absolute -bottom-10 right-0 bg-d2 border border-line p-6 z-30 shadow-2xl max-w-xs hero-featcard">
+          <span class="feat-badge mb-3">Top Pick</span>
+          <div class="feat-name text-xl font-display text-c1">Signature Wings</div>
+          <p class="text-sm text-g2 mb-2">Smoky, crispy, and perfectly seasoned.</p>
+          <div class="feat-price text-woodl text-2xl"><sup>R</sup>65</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5 flex flex-col justify-center hero-copy">
+      <div class="hero-tag">Masters of Fast Food</div>
+      <h2 class="hero-h1 text-6xl font-display font-light text-c1 mb-6 leading-tight">Flavor that <br><span class="text-wood">Rules.</span></h2>
+      <p class="hero-desc text-g1 text-lg mb-8 max-w-md">Experience the best taste with our premium recipes. Kota, grills, and wings done properly — student-priced, premium quality.</p>
+      <div class="flex gap-4 hero-ctas">
+        <a href="#menu" class="btn-primary">View Menu</a>
+        <a href="#location" class="btn-ghost">Find Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">R28+</div><div class="stat-l">Starting From</div></div>
+    <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Menu Items</div></div>
+    <div class="stat"><div class="stat-n">7 Days</div><div class="stat-l">Open Weekly</div></div>
+  </div>
+</section>
+
+<div class="promo-wrap">
+  <div class="promo-track" id="promoTrack">
+    <div class="promo-set">
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-star"/></svg> Kota From R28 — Student-Priced Quality</span>
+      <span class="promo-dot"></span>
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-crown"/></svg> Heavy Duty Kota — Double Patties From R100</span>
+      <span class="promo-dot"></span>
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-flame"/></svg> Fresh Wings Daily — Crispy &amp; Dipped</span>
+      <span class="promo-dot"></span>
+    </div>
+    <div class="promo-set">
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-star"/></svg> Kota From R28 — Student-Priced Quality</span>
+      <span class="promo-dot"></span>
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-crown"/></svg> Heavy Duty Kota — Double Patties From R100</span>
+      <span class="promo-dot"></span>
+      <span class="promo-i"><svg class="ico" style="color:var(--d1);display:block" viewBox="0 0 20 20"><use href="#ico-flame"/></svg> Fresh Wings Daily — Crispy &amp; Dipped</span>
+      <span class="promo-dot"></span>
+    </div>
+  </div>
+</div>
+
+<section id="spotlight" class="spotlight">
+  <div class="spot-inner">
+    <div class="spot-vis">
+      <img src="images/beef and chips.png" class="spot-bg-img" alt="Best Beef and Chips in Bloemfontein - MOFF signature dish">
+      <div class="spot-bg-grad"></div>
+      <span class="new-badge">Bestseller</span>
+    </div>
+    
+    <div class="spot-content">
+      <div class="t-label">Spotlight</div>
+      <h2 class="spot-name">The Legendary <em>Beef &amp; Chips</em></h2>
+      <p class="spot-desc">Char-grilled premium beef cuts, served alongside golden hand-cut crispy chips with fresh rosemary garnish.</p>
+      
+      <div class="spot-bot">
+        <div class="spot-price"><sup>R</sup>80</div>
+        <a href="#menu" class="btn-primary">View Full Menu</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu" class="sec">
+  <div class="menu-wrap">
+    
+    <div class="menu-top">
+      <div>
+        <div class="t-label">Selection</div>
+        <h2 class="t-h2">The <em>MOFF</em> Menu</h2>
+      </div>
+      <button class="btn-dl" onclick="window.open('Menu/MOFF-menu.pdf','_blank')">
+        <svg viewBox="0 0 20 20"><use href="#ico-download"/></svg> Save PDF Menu
+      </button>
+    </div>
+
+    <div class="menu-tabs" id="menuTabs">
+      <button class="mtab active" onclick="switchTab(this,'grills')">Grills &amp; Wings</button>
+      <button class="mtab" onclick="switchTab(this,'meaty')">Meaty Kota</button>
+      <button class="mtab" onclick="switchTab(this,'veg')">Veg Kota</button>
+      <button class="mtab" onclick="switchTab(this,'heavy')">Heavy Duty</button>
+    </div>
+
+    <div class="mpanel" id="meaty">
+      <div class="menu-grid">
+        <div class="msec-hdr">
+          <div class="msec-hdr-label">Meaty Kota</div>
+          <div class="msec-hdr-title">Classic cuts in a hollowed quarter loaf</div>
+          <div class="msec-note">All meaty kotas include: Polony · Atchar · Chips</div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-sausage"/></svg></div>
+          <div class="itop"><div class="iname">Wors Kota</div><div class="iprice">R60</div></div>
+          <div class="idesc">Polony, Atchar, chips — the classic everyday kota</div>
+          <div class="itags"><span class="itag">Everyday Fave</span></div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-meat"/></svg></div>
+          <div class="itop"><div class="iname">Pork Kota</div><div class="iprice">R70</div></div>
+          <div class="idesc">Polony, Atchar, chips — tender pork, full flavour</div>
+          <div class="itags"></div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-meat"/></svg></div>
+          <div class="itop"><div class="iname">Beef Kota</div><div class="iprice">R80</div></div>
+          <div class="idesc">Polony, Atchar, chips — prime beef, bold and satisfying</div>
+          <div class="itags"><span class="itag pop"><svg viewBox="0 0 20 20"><use href="#ico-star"/></svg>Pop</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mpanel" id="veg">
+      <div class="menu-grid">
+        <div class="msec-hdr">
+          <div class="msec-hdr-label">Veg Kota</div>
+          <div class="msec-hdr-title">Plant-forward, flavour-first</div>
+          <div class="msec-note">No meat, no compromise</div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-leaf"/></svg></div>
+          <div class="itop"><div class="iname">Tomato &amp; Red Onion</div><div class="iprice">R40</div></div>
+          <div class="idesc">Chips, cheese, Atchar — light, fresh, satisfying</div>
+          <div class="itags"><span class="itag grn"><svg viewBox="0 0 20 20"><use href="#ico-leaf"/></svg>Vegan friendly</span></div>
+        </div>
+        
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-leaf"/></svg></div>
+          <div class="itop"><div class="iname">Mushroom Kota</div><div class="iprice">R80</div></div>
+          <div class="idesc">Chips, cheese, Atchar — rich umami gourmet profile</div>
+          <div class="itags"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mpanel" id="heavy">
+      <div class="menu-grid">
+        <div class="msec-hdr">
+          <div class="msec-hdr-label">Heavy Duty</div>
+          <div class="msec-hdr-title">Double layer builds for massive appetites</div>
+          <div class="msec-note">For the truly hungry</div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-kota"/></svg></div>
+          <div class="itop"><div class="iname">Double Beef Patty</div><div class="iprice">R100</div></div>
+          <div class="idesc">Two prime beef patties stacked with chips and Atchar</div>
+          <div class="itags"></div>
+        </div>
+
+        <div class="mitem">
+          <div class="iicon"><svg><use href="#ico-crown"/></svg></div>
+          <div class="itop"><div class="iname">King Klip Kota</div><div class="iprice">R150</div></div>
+          <div class="idesc">Luxury kota with premium King Klip fillet, chips, and Atchar</div>
+          <div class="itags"><span class="itag neu"><svg viewBox="0 0 20 20"><use href="#ico-crown"/></svg>Premium</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mpanel active" id="grills">
+      <div class="menu-grid">
+        <div class="msec-hdr">
+          <div class="msec-hdr-label">Grills &amp; Wings</div>
+          <div class="msec-hdr-title">Off-the-bone masters</div>
+          <div class="msec-note">Plates and fast baskets</div>
+        </div>
+
+        <div class="mitem">
+          <img src="images/pork-and-chips.png" class="mitem-photo" alt="Pork and Chips - Best pork meal in Bloemfontein at MOFF">
+          <div class="iicon"><svg><use href="#ico-meat"/></svg></div>
+          <div class="itop"><div class="iname">Pork &amp; Chips</div><div class="iprice">R70</div></div>
+          <div class="idesc">Tender pork served with golden crispy chips</div>
+          <div class="itags"></div>
+        </div>
+
+        <div class="mitem">
+          <img src="images/beef and chips.png" class="mitem-photo" alt="Beef and Chips - Best beef kota in Bloemfontein at MOFF">
+          <div class="iicon"><svg><use href="#ico-meat"/></svg></div>
+          <div class="itop"><div class="iname">Beef &amp; Chips</div><div class="iprice">R90</div></div>
+          <div class="idesc">Char-grilled beef with hand-cut crispy chips</div>
+          <div class="itags"><span class="itag pop"><svg viewBox="0 0 20 20"><use href="#ico-star"/></svg>Pop</span></div>
+        </div>
+
+        <div class="mitem">
+          <img src="images/hake and chips .png" class="mitem-photo" alt="Hake and Chips - Fresh fish meal in Bloemfontein at MOFF">
+          <div class="iicon"><svg><use href="#ico-fish"/></svg></div>
+          <div class="itop"><div class="iname">Hake &amp; Chips</div><div class="iprice"></div></div>
+          <div class="idesc">Crispy hake served with golden chips</div>
+          <div class="itags"></div>
+        </div>
+
+        <div class="mitem">
+          <img src="images/more wings.png" class="mitem-photo" alt="Wings and Chips - Best wings in Bloemfontein at MOFF">
+          <div class="iicon"><svg><use href="#ico-wing"/></svg></div>
+          <div class="itop"><div class="iname">Wings &amp; Chips</div><div class="iprice">From R65</div></div>
+          <div class="idesc">Crispy wings served with chips — sauced or seasoned</div>
+          <div class="itags"><span class="itag pop">Bestseller</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="location" class="loc-sec">
+  <div class="loc-inner">
+    
+    <div class="loc-info">
+      <div class="t-label">Find Us</div>
+      <h2 class="t-h2">Come Taste the <em>Best</em></h2>
+      
+      <div class="addr-block">
+        <p class="addr-line"><strong>Bloemfontein Central</strong></p>
+        <p class="addr-line">29 King Edward Ave</p>
+        <p class="addr-line">Bloemfontein, 9301</p>
+      </div>
+
+      <div class="flex gap-4 flex-wrap" style="margin-top:10px;">
+        <a class="btn-primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=29%20King%20Edward%20Ave%2C%20Bloemfontein%2C%209301">Get Directions</a>
+        <a class="btn-dl" target="_blank" rel="noopener" href="https://wa.me/27715246973">WhatsApp: 0715246973</a>
+      </div>
+
+      <div class="hours-block">
+        <div class="hours-title">We're Always Open</div>
+        <div class="hrow"><span class="hday">Monday – Sunday</span><span class="htime" style="color:var(--woodl);">24 / 7</span></div>
+        <div class="hrow" style="padding-top:12px;border-bottom:none;">
+          <span class="hday" style="font-size:13px;font-style:italic;">No closing time — come when you're hungry</span>
+        </div>
+      </div>
+
+      <div class="status-pill">
+        <div class="sdot"></div>
+        <div class="stext">Open Now</div>
+      </div>
+    </div>
+
+    <div class="map-wrap">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=26.1750%2C-29.1300%2C26.2350%2C-29.0950&layer=mapnik&marker=-29.1125%2C26.2141" allowfullscreen loading="lazy" title="MOFF Location"></iframe>
+      <div class="map-card">
+        <div class="map-card-label">MOFF</div>
+        <div class="map-card-addr">29 King Edward Ave, Bloem</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="faq" class="sec" style="background:var(--d2); border-top:1px solid var(--line);">
+  <div class="menu-wrap">
+    <div class="sec-hdr" style="text-align:center; margin-bottom:48px;">
+      <div class="t-label" style="justify-content:center;">FAQ</div>
+      <h2 class="t-h2">Frequently Asked Questions</h2>
+    </div>
+    
+    <div style="max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:20px;">
+      <details style="background:var(--d1); border:1px solid var(--line); padding:20px 24px; cursor:pointer;">
+        <summary style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--c1); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+          Where can I find the best kota in Bloemfontein?
+          <span style="color:var(--wood);">+</span>
+        </summary>
+        <p style="margin-top:16px; color:var(--g1); line-height:1.7; font-size:15px;">
+          MOFF at 29 King Edward Ave is known for the best kota in Bloemfontein. We serve premium kotas with polony, atchar, and chips — student-priced and open 24/7.
+        </p>
+      </details>
+      
+      <details style="background:var(--d1); border:1px solid var(--line); padding:20px 24px; cursor:pointer;">
+        <summary style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--c1); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+          What are the best student food options in Bloem?
+          <span style="color:var(--wood);">+</span>
+        </summary>
+        <p style="margin-top:16px; color:var(--g1); line-height:1.7; font-size:15px;">
+          MOFF offers the best student food in Bloemfontein starting from just R28. Our menu includes Wors Kota (R60), Pork Kota (R70), Beef Kota (R80), and our famous Wings & Chips from R65. We're located near UFS and open 24/7 for late-night study sessions.
+        </p>
+      </details>
+      
+      <details style="background:var(--d1); border:1px solid var(--line); padding:20px 24px; cursor:pointer;">
+        <summary style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--c1); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+          Is there a 24-hour restaurant in Bloemfontein?
+          <span style="color:var(--wood);">+</span>
+        </summary>
+        <p style="margin-top:16px; color:var(--g1); line-height:1.7; font-size:15px;">
+          Yes! MOFF is a 24-hour restaurant in Bloemfontein located at 29 King Edward Ave. We're open 7 days a week, 24/7, serving kota, grills, and wings whenever you're hungry — even late at night after campus events or study sessions.
+        </p>
+      </details>
+      
+      <details style="background:var(--d1); border:1px solid var(--line); padding:20px 24px; cursor:pointer;">
+        <summary style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--c1); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+          Where can I get cheap food near UFS?
+          <span style="color:var(--wood);">+</span>
+        </summary>
+        <p style="margin-top:16px; color:var(--g1); line-height:1.7; font-size:15px;">
+          MOFF is the go-to spot for cheap food near the University of the Free State. We're just minutes from campus at 29 King Edward Ave, with student-priced meals starting at R28. Our kotas, grills, and wings offer premium quality at budget-friendly prices.
+        </p>
+      </details>
+      
+      <details style="background:var(--d1); border:1px solid var(--line); padding:20px 24px; cursor:pointer;">
+        <summary style="font-family:'Barlow Condensed',sans-serif; font-size:14px; font-weight:500; letter-spacing:.15em; text-transform:uppercase; color:var(--c1); list-style:none; display:flex; justify-content:space-between; align-items:center;">
+          What's the best place for wings in Bloemfontein?
+          <span style="color:var(--wood);">+</span>
+        </summary>
+        <p style="margin-top:16px; color:var(--g1); line-height:1.7; font-size:15px;">
+          MOFF serves the best wings in Bloemfontein. Our Wings & Chips starts from R65 and includes crispy, sauced or seasoned wings with golden chips. We're a student favorite for late-night wings and have been voted a bestseller by our customers.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="foot-top">
+    <div>
+      <div class="foot-brand">MOFF</div>
+      <p class="foot-tag">Masters of Fast Food. Kota, grills and wings done properly — student-priced, premium quality. Bloemfontein's go-to.</p>
+    </div>
+    <div>
+      <div class="foot-col-title">Navigate</div>
+      <ul class="foot-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#spotlight">Featured</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="foot-col-title">Socials</div>
+      <ul class="foot-links">
+        <li><a href="#">Instagram (Coming soon)</a></li>
+        <li><a href="#">Facebook (Coming soon)</a></li>
+        <li><a href="#">TikTok (Coming soon)</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bot">
+    <div class="foot-copy">&copy; 2026 MOFF. All rights reserved.</div>
+    <div class="foot-social">
+      <a href="#" class="soc">Instagram (Coming soon)</a>
+      <a href="#" class="soc">X (Twitter) (Coming soon)</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const { animate, stagger, inView } = Motion;
+
+  // Drawer functions
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const navBurger = document.querySelector('.nav-burger');
+
+  function openDrawer() {
+    mobileDrawer.classList.add('open');
+    drawerOverlay.classList.add('open');
+    navBurger.classList.add('open');
+  }
+
+  function closeDrawer() {
+    mobileDrawer.classList.remove('open');
+    drawerOverlay.classList.remove('open');
+    navBurger.classList.remove('open');
+  }
+
+  navBurger.addEventListener('click', () => {
+    if (mobileDrawer.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  });
+
+  // Tab switching
+  function switchTab(el, tabId) {
+    document.querySelectorAll('.mtab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.mpanel').forEach(p => p.classList.remove('active'));
+    el.classList.add('active');
+    const target = document.getElementById(tabId);
+    target.classList.add('active');
+
+    const tabs = document.getElementById('menuTabs');
+    if (tabs) {
+      el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      tabs.scrollBy({ left: Math.round(tabs.clientWidth * 0.35), behavior: 'smooth' });
+    }
+    
+    // Animate items in new tab
+    const items = target.querySelectorAll('.mitem');
+    animate(items, { opacity: [0, 1], y: [15, 0] }, { delay: stagger(0.05), duration: 0.4 });
+  }
+
+  // Mobile Menu button: scroll to #menu then auto-download after 4 seconds
+  function scrollToMenuAndDownload(e) {
+    e.preventDefault();
+    const menuEl = document.getElementById('menu');
+    if (menuEl) {
+      menuEl.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => {
+        const a = document.createElement('a');
+        a.href = 'Menu/MOFF-menu.pdf';
+        a.target = '_blank';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, 4000);
+    }
+  }
+
+  // Animations with Motion One
+  animate('.hero-wings', { opacity:[0,1], y:[18,0], scale:[0.98,1] }, { duration:0.8, easing:'ease-out' });
+  animate('.hero-logo', { opacity:[0,1], scale:[0.85,1] }, { delay:0.12, duration:0.7, easing:[0.34,1.56,0.64,1] });
+  animate('.hero-tag', { opacity:[0,1], x:[-20,0] }, { delay:0.35, duration:0.6, easing:'ease-out' });
+  animate('.hero-h1', { opacity:[0,1], y:[26,0] }, { delay:0.42, duration:0.8, easing:'ease-out' });
+  animate('.hero-desc', { opacity:[0,1], y:[18,0] }, { delay:0.55, duration:0.6, easing:'ease-out' });
+  animate('.hero-ctas', { opacity:[0,1], y:[12,0] }, { delay:0.65, duration:0.55, easing:'ease-out' });
+
+  // Stats counter effect
+  inView('.hero-stats', () => {
+    document.querySelectorAll('.stat-n').forEach(el => {
+      animate(el, { opacity:[0,1], scale:[0.7,1] }, { duration:0.5, easing:[0.34,1.56,0.64,1] });
+    });
+  });
+
+  // Section reveals with stagger
+  inView('.spot-content', () => {
+    animate('.spot-content > *', { opacity:[0,1], x:[-24,0] },
+      { delay: stagger(0.1), duration:0.6, easing:'ease-out' });
+  });
+
+  inView('.loc-info', () => {
+    animate('.loc-info > *', { opacity:[0,1], y:[16,0] },
+      { delay: stagger(0.1), duration:0.55, easing:'ease-out' });
+  });
+
+  // Initial menu item animation
+  const initItems = document.querySelectorAll('#grills .mitem');
+  inView('#grills', () => {
+    animate(initItems, { opacity:[0,1], y:[20,0] }, { delay: stagger(0.05), duration:0.5 });
+  });
+
+  // PDF Generation function (updated array to your actual requested names)
+  async function downloadMenuPDF() {
+    const overlay = document.getElementById('pdfOverlay');
+    overlay.classList.add('active');
+    try {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      // Loaded with your file names!
+      const menuImages = ['images/menu1.png', 'images/menu2.png', 'images/menu3.png'];
+      let loaded = 0;
+      
+      for (let i = 0; i < menuImages.length; i++) {
+        try {
+          const imgData = await loadImageAsDataURL(menuImages[i]);
+          if (i > 0) pdf.addPage();
+          const props = pdf.getImageProperties(imgData);
+          const pdfW = 210; // A4 width in mm
+          const pdfH = (props.height * pdfW) / props.width;
+          const yOffset = pdfH < 297 ? (297 - pdfH) / 2 : 0;
+          pdf.addImage(imgData, 'PNG', 0, yOffset, pdfW, Math.min(pdfH, 297));
+          loaded++;
+        } catch (e) {
+          console.warn(`Menu image ${i + 1} not found — skipping.`);
+        }
+      }
+      if (loaded === 0) {
+        console.warn('Menu image files not found in the images folder. Please ensure they are uploaded.');
+      } else {
+        pdf.save('MOFF-Menu.pdf');
+      }
+    } catch (err) {
+      console.error('PDF error:', err);
+      console.warn('Could not generate PDF. Please check your menu images are in the /images/ folder.');
+    } finally {
+      overlay.classList.remove('active');
+    }
+  }
+
+  function loadImageAsDataURL(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.onload = function() {
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        canvas.getContext('2d').drawImage(img, 0, 0);
+        resolve(canvas.toDataURL('image/png'));
+      };
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+</script>
+
+</body>
+</html>
